@@ -36,7 +36,7 @@ const js = jetstream(nc);
 // Publish one order with a per-message TTL. The `ttl` option sets the
 // `Nats-TTL` header ("60s"), so the server deletes this message 60 seconds
 // after it is stored, even if the stream would otherwise keep it forever.
-const pa = await js.publish("orders.cancelled", "order ord_8w2k cancelled", {
+const pa = await js.publish("orders.canceled", "order ord_8w2k canceled", {
   ttl: "60s",
 });
 console.log(`Stored in ${pa.stream} at sequence ${pa.seq}`);

@@ -38,7 +38,7 @@ const js = jetstream(nc);
 // rejects the message with err 10166 ("per-message TTL is disabled") and stores
 // nothing. Enabling `allow_msg_ttl` on the stream is the fix.
 try {
-  await js.publish("no-ttl.msg", "order ord_8w2k cancelled", { ttl: "60s" });
+  await js.publish("no-ttl.msg", "order ord_8w2k canceled", { ttl: "60s" });
 } catch (err) {
   if (err instanceof JetStreamApiError) {
     console.log(`Rejected (err ${err.code}): ${err.message}`);
